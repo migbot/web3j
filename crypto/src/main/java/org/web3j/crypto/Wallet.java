@@ -14,10 +14,10 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.spongycastle.crypto.digests.SHA256Digest;
-import org.spongycastle.crypto.generators.PKCS5S2ParametersGenerator;
-import org.spongycastle.crypto.generators.SCrypt;
-import org.spongycastle.crypto.params.KeyParameter;
+import org.bouncycastle.crypto.digests.SHA256Digest;
+import org.bouncycastle.crypto.generators.PKCS5S2ParametersGenerator;
+import org.bouncycastle.crypto.generators.SCrypt;
+import org.bouncycastle.crypto.params.KeyParameter;
 
 import org.web3j.utils.Numeric;
 
@@ -31,7 +31,7 @@ import static org.web3j.crypto.SecureRandomUtils.secureRandom;
  * Go Ethereum client implementation</a>.</p>
  *
  * <p><strong>Note:</strong> we don't use the Bouncy Castle Scrypt implementation
- * {@link org.spongycastle.crypto.generators.SCrypt}, as the following parameter assertion results
+ * {@link org.bouncycastle.crypto.generators.SCrypt}, as the following parameter assertion results
  * in failure of the Ethereum reference
  * <p><strong>Note:</strong> the Bouncy Castle Scrypt implementation
  * {@link SCrypt}, fails to comply with the following

@@ -252,7 +252,7 @@ public class MnemonicUtils {
 
     private static List<String> populateWordList() {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("/en-mnemonic-word-list.txt");
+                .getResourceAsStream("en-mnemonic-word-list.txt");
         try {
             return readAllLines(inputStream);
         } catch (Exception e) {
