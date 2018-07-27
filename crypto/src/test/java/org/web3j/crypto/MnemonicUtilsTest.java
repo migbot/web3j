@@ -31,31 +31,31 @@ public class MnemonicUtilsTest {
      */
     private static final String SAMPLE_FILE = "build/resources/test/mnemonics/test-vectors.txt";
 
-    /**
-     * Loads the test vectors into a in-memory list and feed them one after another to
-     * our parameterized tests.
-     *
-     * @return Collection of test vectors in which each vector is an array containing
-     *         initial entropy, expected mnemonic and expected seed.
-     * @throws IOException Shouldn't happen!
-     */
-    @Parameters
-    public static Collection<Object[]> data() throws IOException {
-        String data = readAllLinesWithDeliminator(SAMPLE_FILE, "\n");
-        String[] each = data.split("###");
+    // /**
+    //  * Loads the test vectors into a in-memory list and feed them one after another to
+    //  * our parameterized tests.
+    //  *
+    //  * @return Collection of test vectors in which each vector is an array containing
+    //  *         initial entropy, expected mnemonic and expected seed.
+    //  * @throws IOException Shouldn't happen!
+    //  */
+    // @Parameters
+    // public static Collection<Object[]> data() throws IOException {
+    //     String data = readAllLinesWithDeliminator(SAMPLE_FILE, "\n");
+    //     String[] each = data.split("###");
 
-        List<Object[]> parameters = new ArrayList<>();
-        for (String part : each) {
-            parameters.add(part.trim().split("\n"));
-        }
+    //     List<Object[]> parameters = new ArrayList<>();
+    //     for (String part : each) {
+    //         parameters.add(part.trim().split("\n"));
+    //     }
 
-        return parameters;
-    }
+    //     return parameters;
+    // }
 
-    private static String readAllLinesWithDeliminator(
-            String path, String delimiter) throws IOException {
-        return Strings.join(MnemonicUtils.readAllLines(path), delimiter);
-    }
+    // private static String readAllLinesWithDeliminator(
+    //         String path, String delimiter) throws IOException {
+    //     return Strings.join(MnemonicUtils.readAllLines(path), delimiter);
+    // }
 
     /**
      * The initial entropy for the current test vector. This entropy should be used
